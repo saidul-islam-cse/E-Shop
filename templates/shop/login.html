@@ -14,8 +14,8 @@
                     {% csrf_token %}
                     
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username or Email</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
                     </div>
                     
                     <div class="mb-3">
@@ -32,9 +32,10 @@
                 
                 <div class="text-center">
                     <p>Or sign in with:</p>
-                    <a href="{% provider_login_url 'google' next=request.GET.next %}" class="btn btn-outline-danger">
+                   <a href="{% provider_login_url 'google' %}" class="btn btn-outline-danger rounded-pill px-4 py-2">
                         <i class="fab fa-google me-2"></i> Google
                     </a>
+
                 </div>
                 
                 <div class="text-center mt-4">

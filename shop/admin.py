@@ -1,7 +1,16 @@
 from django.contrib import admin
-from .models import Category, Product, Rating, Cart, CartItem, Order, OrderItem
+from .models import Category, Product, Rating, Cart, CartItem, Order, OrderItem, CustomUser
+from django.contrib.auth.admin import UserAdmin
+
 # Register your models here.
 
+@admin.register(CustomUser)
+class CustomUserAdmin(admin.ModelAdmin):
+    list_display = ['email', 'is_active', 'is_staff', 'is_superuser']
+    def save_model(self, request, obj, form, change):
+        if form.cleaned_data.get("password"):
+            obj.set_password(form.cleaned_data["password"])
+        return super().save_model(request, obj, form, change)
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']

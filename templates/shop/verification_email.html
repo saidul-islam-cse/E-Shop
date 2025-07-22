@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to E-Shop</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header h1 {
+            color: #6a11cb;
+        }
+
+        .content {
+            padding: 1.5rem 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .content a.button {
+            display: inline-block;
+            background-color: #6a11cb;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #6c757d;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #6a11cb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to E-Shop</h1>
+        </div>
+
+        <div class="content">
+            <p>Hi {{ user.first_name }},</p>
+
+            <p>Thank you for registering with <strong>E-Shop</strong>. We’re excited to have you on board! To start exploring and shopping, please verify your email address.</p>
+
+            <p style="text-align: center;">
+                <a href="{{ verification_link }}" class="button">Verify Email</a>
+            </p>
+
+
+            <p>If you didn’t create this account, you can safely ignore this email.</p>
+        </div>
+
+        <div class="footer">
+            <p>Need help? Contact us at <a href="mailto:contact@eshop.com">contact@eshop.com</a>.</p>
+            <p>&copy; {{ current_year }} E-Shop. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
