@@ -6,6 +6,7 @@ django-allauth
 django-environ
 idna
 pillow
+cryptography
 PyJWT
 requests
 sqlparse
