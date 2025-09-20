@@ -173,5 +173,3 @@ cython_debug/
 .pypirc
 
 # static and media root directory
-media/
-static/
