@@ -29,6 +29,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'https://e-shop-u7vb.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://e-shop-u7vb.onrender.com']
 
 
 # Application definition
