@@ -26,4 +26,6 @@ urlpatterns = [
 
     path('profile/', views.profile, name='profile'),
     path('rate/<int:product_id>/', views.rate_product, name='rate_product'),
+
+    path("check-smtp/", views.check_smtp, name="check_smtp"),
 ]

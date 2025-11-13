@@ -334,3 +334,15 @@ def rate_product(request, product_id):
 
 def custom_404_view(request, exception):
     return render(request, 'shop/404.html', status=404)
+
+from django.http import HttpResponse
+import smtplib
+
+def check_smtp(request):
+    try:
+        server = smtplib.SMTP("smtp.gmail.com", 587, timeout=10)
+        server.starttls()
+        server.quit()
+        return HttpResponse("✅ SMTP connection successful!")
+    except Exception as e:
+        return HttpResponse(f"❌ SMTP connection failed: {e}")
