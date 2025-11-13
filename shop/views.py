@@ -29,7 +29,9 @@ def register_view(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            user.is_active = False
+            user.save()
             send_verification_email(request, user)
             messages.info(request, "We have sent you an verification email")
             return redirect('shop:login')
@@ -48,6 +50,7 @@ def verify_email(request, uidb64, token):
     
     if user and default_token_generator.check_token(user, token):
         user.is_verified = True
+        user.is_active = True
         user.save()
         messages.success(request, "Your email has been verified successfully.")
         return redirect('shop:login')

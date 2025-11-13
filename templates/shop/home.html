@@ -447,7 +447,7 @@
             <div class="card h-100 category-card">
                 <div class="card-body text-center py-4">
                     <div class="category-icon">
-                        <i class="fas fa-{% if forloop.counter == 1 %}tshirt{% elif forloop.counter == 2 %}laptop{% elif forloop.counter == 3 %}mobile-alt{% elif forloop.counter == 4 %}home{% elif forloop.counter == 5 %}shoe-prints{% else %}tag{% endif %}"></i>
+                        <i class="fas fa-{% if forloop.counter == 1 %}mobile-alt{% elif forloop.counter == 2 %}book{% elif forloop.counter == 3 %}tshirt{% elif forloop.counter == 4 %}home{% elif forloop.counter == 5 %}shoe-prints{% else %}tag{% endif %}"></i>
                     </div>
                     <h3 class="category-title">{{ category.name }}</h3>
                     <p class="card-text">{{ category.description|truncatechars:100 }}</p>
